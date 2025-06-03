@@ -1,0 +1,9 @@
+<div class="container">
+  <form (ngSubmit)="sayHello()" #greetForm="ngForm">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="userName" required />
+    <button type="submit" [disabled]="!greetForm.form.valid">Greet</button>
+  </form>
+
+  <p *ngIf="greetingMessage">{{ greetingMessage }}</p>
+</div>
